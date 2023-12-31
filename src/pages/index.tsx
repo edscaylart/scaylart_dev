@@ -6,6 +6,8 @@ import { api } from "~/utils/api";
 export default function Home() {
   const hello = api.post.hello.useQuery({ text: "from tRPC" });
 
+  const spotify = api.spotify.getCurrentPlayingTrack.useQuery();
+
   return (
     <>
       <Head>
@@ -43,7 +45,7 @@ export default function Home() {
             </Link>
           </div>
           <p className="text-2xl text-white">
-            {hello.data ? hello.data.greeting : "Loading tRPC query..."}
+            {spotify.data ? `Current playing: ${spotify.data.artist} - ${spotify.data.name}` : "Loading tRPC query..."}
           </p>
         </div>
       </main>
