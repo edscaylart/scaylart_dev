@@ -1,10 +1,8 @@
 export const profile = {
-  character: {
-    name: 'Edson Souza',
-    race: 'Human',
-    class: 'Software Engineer',
-    level: new Date().getFullYear() - 2011,
-  },
+  name: 'Edson Souza',
+  race: 'Human',
+  class: 'Software Engineer',
+  level: new Date().getFullYear() - 2011,
   attributes: [
     { label: 'strength', value: 8 },
     { label: 'dexterity', value: 15 },
@@ -14,6 +12,3 @@ export const profile = {
     { label: 'charisma', value: 10 },
   ],
 }
-
-export type IProfileCharacter = typeof profile.character
-export type IProfileAttribute = typeof profile.attributes[0]

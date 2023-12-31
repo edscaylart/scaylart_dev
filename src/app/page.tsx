@@ -1,16 +1,42 @@
-import Link from "next/link";
-
-import { CreatePost } from "~/app/_components/create-post";
-import { Profile } from "~/app/_components/profile";
-import { api } from "~/trpc/server";
+import { CreatePost } from "@/app/_components/create-post";
+import { api } from "@/trpc/server";
+import { ProfileHeader } from "@/components/profile-header";
+import { ProfileAttributes } from "@/components/profile-attributes";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ProfileNotes } from "@/components/profile-notes";
+import { ProfileBackground } from "@/components/profile-background";
 
 export default async function Home() {
-  const hello = await api.post.hello.query({ text: "from tRPC" });
+  // const hello = await api.post.hello.query({ text: "from tRPC" });
 
   return (
-    <main className="mx-auto min-h-screen max-w-[640px] p-6">
-      <Profile />
-    </main>
+    <div className="container flex flex-col items-center justify-center gap-6">
+      <ProfileHeader />
+      <ProfileAttributes />
+
+      <Tabs defaultValue="notes">
+        <TabsList>
+          <TabsTrigger value="actions">ACTIONS</TabsTrigger>
+          <TabsTrigger value="spells">SPELLS</TabsTrigger>
+          <TabsTrigger value="inventory">INVENTORY</TabsTrigger>
+          <TabsTrigger value="featuresAndTraits">FEATURES & TRAITS</TabsTrigger>
+          <TabsTrigger value="description">DESCRIPTION</TabsTrigger>
+          <TabsTrigger value="notes">NOTES</TabsTrigger>
+          <TabsTrigger value="extra">EXTRA</TabsTrigger>
+        </TabsList>
+        <TabsContent value="actions">ACTIONS</TabsContent>
+        <TabsContent value="spells">SPELLS</TabsContent>
+        <TabsContent value="inventory">INVENTORY</TabsContent>
+        <TabsContent value="featuresAndTraits">FEATURES & TRAITS</TabsContent>
+        <TabsContent value="description">
+          <ProfileBackground />
+        </TabsContent>
+        <TabsContent value="notes">
+          <ProfileNotes />
+        </TabsContent>
+        <TabsContent value="extra">EXTRA</TabsContent>
+      </Tabs>
+    </div>
   );
 }
 
