@@ -1,4 +1,5 @@
 import { postRouter } from "~/server/api/routers/post";
+import { spotifyRoute } from "~/server/api/routers/spotify";
 import { createTRPCRouter } from "~/server/api/trpc";
 
 /**
@@ -8,6 +9,7 @@ import { createTRPCRouter } from "~/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   post: postRouter,
+  spotify: spotifyRoute
 });
 
 // export type definition of API
