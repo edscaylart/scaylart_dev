@@ -1,16 +1,13 @@
 import { TRPCError } from '@trpc/server';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc';
 import { getCurrentPlayingTrack } from '@/lib/spotify';
-import { NoTrackPlayingError } from '@/server/errors/no-track-playing-error';
 
 export const spotifyRoute = createTRPCRouter({
   getCurrentPlayingTrack: publicProcedure.query(async () => {
     try {
       const track = await getCurrentPlayingTrack()
 
-      if (!track?.is_playing) {
-        throw new NoTrackPlayingError()
-      }
+      if (!track?.is_playing) return null;
 
       return {
         name: track.item.name,

@@ -5,11 +5,13 @@ const Attribute = ({ label, value }: { label: string, value: number }) => {
   const modifier = getAttributeModifier(value);
 
   return (
-    <li className="container flex flex-col items-center justify-between border border-black rounded-lg h-[90px] w-[84px] pt-1 m-0">
-      <span className="text-[9px] uppercase">{label}</span>
-      <span className="text-xl">{value}</span>
-      <div className="flex h-[24px] w-[40px] border border-black rounded-lg items-center justify-center">
-        <span className="text-sm">{modifier >= 0 ? `+${modifier}` : modifier}</span>
+    <li className="relative container flex flex-col items-center border border-slate-300 rounded-lg h-[90px] w-[84px] pt-1 m-0">
+      <span className="text-[9px] uppercase font-semibold">{label}</span>
+      <div className="flex flex-1 -mt-4 justify-center items-center">
+        <span className="text-2xl font-semibold">{value}</span>
+      </div>
+      <div className="absolute -bottom-3 flex h-[24px] w-[40px] border border-slate-500 rounded-lg items-center justify-center bg-slate-50">
+        <span className="text-sm font-semibold">{modifier >= 0 ? `+${modifier}` : modifier}</span>
       </div>
     </li>
   )

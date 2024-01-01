@@ -24,7 +24,7 @@ export const organizations: IOrganizations[] = [
   {
     name: 'Notis/us',
     date: 'FEB 2022 - APR 2023',
-    locality: 'Curitiba, Paraná - Brazil',
+    locality: 'Curitiba, PR - Brazil',
     techs: [
       'React',
       'React Native',
@@ -35,7 +35,7 @@ export const organizations: IOrganizations[] = [
   {
     name: 'ATTO Sementes',
     date: 'MAR 2020 - FEB 2022',
-    locality: 'Rondonópolis, Mato Grosso - Brazil',
+    locality: 'Rondonópolis, MT - Brazil',
     techs: [
       'PHP',
       'Laravel',
@@ -48,7 +48,7 @@ export const organizations: IOrganizations[] = [
   {
     name: 'Tecnobit Sistemas Inteligentes',
     date: 'MAY 2011 - MAR 2020',
-    locality: 'Rondonópolis, Mato Grosso - Brazil',
+    locality: 'Rondonópolis, MT - Brazil',
     techs: [
       'Delphi',
       'Android',

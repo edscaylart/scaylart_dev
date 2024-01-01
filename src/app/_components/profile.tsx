@@ -1,5 +1,4 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { profile } from "@/data/profile"
 import { ProfileAttributes } from "@/components/profile-attributes"
 import { ProfileHeader } from "@/components/profile-header"
 

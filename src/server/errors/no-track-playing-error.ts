@@ -1,6 +1,8 @@
-export class NoTrackPlayingError extends Error {
+import { TRPCError } from "@trpc/server";
+
+export class NoTrackPlayingError extends TRPCError {
   constructor(message: string = 'No track is currently playing') {
-    super(message);
+    super({ code: 'NOT_FOUND', cause: message });
     this.name = 'NoTrackPlayingError';
   }
 }
