@@ -17,7 +17,7 @@ export default async function Home() {
 
       <section>
         <div className="relative rounded-lg border-[1px] border-slate-300 px-4 py-3">
-          <Tabs defaultValue="notes">
+          {/* <Tabs defaultValue="notes">
             <TabsList>
               <TabsTrigger value="actions">ACTIONS</TabsTrigger>
               <TabsTrigger value="spells">SPELLS</TabsTrigger>
@@ -38,7 +38,8 @@ export default async function Home() {
               <ProfileNotes />
             </TabsContent>
             <TabsContent value="extra">EXTRA</TabsContent>
-          </Tabs>
+          </Tabs> */}
+          <ProfileNotes />
         </div>
       </section>
     </div>

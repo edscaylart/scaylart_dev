@@ -2,8 +2,14 @@ import { TRPCError } from '@trpc/server';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc';
 import { getCurrentPlayingTrack } from '@/lib/spotify';
 
+export interface ICurrentPlayingTrack {
+  name: string;
+  artist: string;
+  image?: string | null;
+}
+
 export const spotifyRoute = createTRPCRouter({
-  getCurrentPlayingTrack: publicProcedure.query(async () => {
+  getCurrentPlayingTrack: publicProcedure.query(async (): Promise<ICurrentPlayingTrack | null> => {
     try {
       const track = await getCurrentPlayingTrack()
 

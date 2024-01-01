@@ -3,7 +3,7 @@ import { organizations } from "@/data/organizations"
 
 export const ProfileNotes = () => {
   return (
-    <section className="mt-6">
+    <section className="mt-1">
       <p className="text-xl font-semibold cursor-default">Organizations</p>
       <div className='mt-2 border-b border-slate-100'></div>
       <div className="mt-4">
@@ -22,14 +22,14 @@ const OrganizationCard = ({ name, date, locality, description, techs }: { name: 
     <li className={clsx(
       'relative rounded-lg border-[1px] border-none px-4 py-3 cursor-default',
       'transition-all duration-500 ease-out',
-      'bg-slate-50 hover:bg-slate-200',
+      'bg-stone-900 hover:bg-stone-800',
     )}>
       <div className="flex w-full flex-col space-y-4">
-        <div>
-          <div className="flex flex-row items-center justify-between">
-            <span className="text-md font-semibold">{name}</span>
+        <div className='flex flex-col'>
+          <div className="flex flex-row items-center justify-end mb-2">
             <span className="text-xs text-gray-600">{date}</span>
           </div>
+          <span className="text-md font-semibold">{name}</span>
           <span className="text-sm text-gray-600">{locality}</span>
         </div>
         <span className="text-sm text-gray-600">{description}</span>

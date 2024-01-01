@@ -30,12 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
+        "min-h-screen font-sans antialiased",
         inter.variable
       )}>
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <main className="mx-auto min-h-screen max-w-[640px] p-6">
+            <main className="mx-auto min-h-screen max-w-[640px] px-4 pt-24 pb-10 sm:pt-40">
               {children}
             </main>
           </ThemeProvider>

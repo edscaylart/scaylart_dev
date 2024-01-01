@@ -10,7 +10,7 @@ const Attribute = ({ label, value }: { label: string, value: number }) => {
       <div className="flex flex-1 -mt-4 justify-center items-center">
         <span className="text-2xl font-semibold">{value}</span>
       </div>
-      <div className="absolute -bottom-3 flex h-[24px] w-[40px] border border-slate-500 rounded-lg items-center justify-center bg-slate-50">
+      <div className="absolute -bottom-3 flex h-[24px] w-[40px] border border-slate-500 rounded-lg items-center justify-center bg-stone-900">
         <span className="text-sm font-semibold">{modifier >= 0 ? `+${modifier}` : modifier}</span>
       </div>
     </li>
@@ -19,7 +19,7 @@ const Attribute = ({ label, value }: { label: string, value: number }) => {
 
 export const ProfileAttributes = () => {
   return (
-    <ul className="flex flex-wrap gap-x-10 gap-y-2 sm:gap-1 items-center justify-center cursor-default">
+    <ul className="flex flex-wrap gap-x-2 gap-y-4 sm:gap-1 items-center justify-center cursor-default">
       {profile.attributes.map(({ value, label }) => (
         <Attribute key={label} label={label} value={value} />
       ))}
