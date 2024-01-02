@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { profile } from "@/data/profile";
 import { getAttributeModifier } from "@/utils/dnd"
 
@@ -5,13 +7,24 @@ const Attribute = ({ label, value }: { label: string, value: number }) => {
   const modifier = getAttributeModifier(value);
 
   return (
-    <li className="relative container flex flex-col items-center border border-slate-300 rounded-lg h-[90px] w-[84px] pt-1 m-0">
-      <span className="text-[9px] uppercase font-semibold">{label}</span>
-      <div className="flex flex-1 -mt-4 justify-center items-center">
-        <span className="text-2xl font-semibold">{value}</span>
+    <li className="relative container flex flex-col items-center rounded-lg h-[102px] w-[84px] pt-1 m-0 text-center">
+      <div className="absolute overflow-hidden top-0 bottom-0 left-0 right-0">
+        <Image
+          height={102}
+          width={84}
+          priority
+          src="/svg/dnd-box-background.svg"
+          alt="Dnd Box Background"
+        />
       </div>
-      <div className="absolute -bottom-3 flex h-[24px] w-[40px] border border-slate-500 rounded-lg items-center justify-center bg-stone-900">
-        <span className="text-sm font-semibold">{modifier >= 0 ? `+${modifier}` : modifier}</span>
+      <div>
+        <span className="relative text-[9px] uppercase font-semibold">{label}</span>
+      </div>
+      <div>
+        <span className=" relative text-2xl font-semibold">{modifier >= 0 ? `+${modifier}` : modifier}</span>
+      </div>
+      <div className="absolute bottom-2 left-0 right-0">
+        <span className="text-md font-semibold">{value}</span>
       </div>
     </li>
   )
