@@ -1,8 +1,10 @@
+import { getAge } from "@/utils/age";
+
 export const profile = {
   name: 'Edson Souza',
   race: 'Human',
   class: 'Software Engineer',
-  level: new Date().getFullYear() - 2011,
+  level: getAge(5, 2011),
   attributes: [
     { label: 'strength', value: 8 },
     { label: 'dexterity', value: 15 },
