@@ -31,7 +31,7 @@ export default async function Home() {
         <div className="flex flex-col items-center justify-center space-y-6 sm:flex-row sm:items-start sm:space-y-0 sm:space-x-6">
           <ProfileAttributes />
 
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-wrap sm:flex-row md:flex-nowrap gap-4">
             <ProfileBackground />
 
             <section className="mt-1 sm:max-w-[370px] border border-slate-100 rounded-lg shadow-md py-2 h-fit">

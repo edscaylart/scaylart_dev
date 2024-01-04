@@ -29,7 +29,7 @@ const ProfileBackgroundCard = ({ name, date, description, locality, techs }: { n
 
 export const ProfileBackground = () => {
   return (
-    <section className="mt-1 sm:max-w-[360px] border border-slate-100 rounded-lg shadow-md py-2">
+    <section className="mt-1 md:max-w-[360px] border border-slate-100 rounded-lg shadow-md py-2">
       <p className="ml-4 text-sm font-semibold cursor-default">Background</p>
       <div className='mt-2 border-b border-slate-100'></div>
       <div className="mt-4 px-2">
