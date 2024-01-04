@@ -53,6 +53,18 @@ export const profile = {
       description: `As a Front end/Mobile Engineer, I had the opportunity to work on major company initiatives. It was a good experience to learn more about agribusiness and the impact of technology.`
     },
     {
+      name: 'CodeTie',
+      date: '2019 - 2021',
+      locality: 'Curitiba, PR - Brazil',
+      techs: [
+        'React',
+        'React Native',
+        'NodeJS',
+        'AdonisJS'
+      ],
+      description: `As a Full Stack Engineer and Teach Lead, I worked at a few different kind of projects, from digital creators app to finance management app.`
+    },
+    {
       name: 'Specialization in Mobile Application Development',
       date: 'JAN 2014 - NOV 2015',
       description: `Studied at the University of the Valley of the River of the Saints (Unisinos) in São Leopoldo, RS`,
