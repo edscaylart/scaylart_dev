@@ -1,6 +1,9 @@
-import { api } from "@/trpc/server";
-import { Link } from "./link";
+import Image from 'next/image';
 import { FaSpotify } from "react-icons/fa";
+
+import { api } from "@/trpc/server";
+
+import { Link } from "./link";
 
 export const Footer = async () => {
   const spotifyTrack = await api.spotify.getCurrentPlayingTrack.query();
@@ -17,19 +20,27 @@ export const Footer = async () => {
           size="sm"
           className="mr-auto"
           leftIcon={
-            <FaSpotify size={16} className="fill-[#1DB954]" />
+            <FaSpotify size={!spotifyTrack ? 16 : 32} className="fill-[#1DB954]" />
           }
         >
           {spotifyTrack ? (
-            <>
-              <span className="font-bold">
-                {spotifyTrack.name}
-              </span>
-              <span className="text-rose-200/50">
-                {' '}
-                - {spotifyTrack.artist}
-              </span>
-            </>
+            <div className="flex flex-row gap-4">
+              {spotifyTrack.image && (<Image
+                height={48}
+                width={48}
+                priority
+                src={spotifyTrack.image}
+                alt={spotifyTrack.name}
+              />)}
+              <div className="flex flex-col gap-1">
+                <span className="font-bold">
+                  {spotifyTrack.name}
+                </span>
+                <span className="text-rose-200/50">
+                  {spotifyTrack.artist}
+                </span>
+              </div>
+            </div>
           ) : (
             <>
               <span className="font-bold">

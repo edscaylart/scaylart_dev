@@ -17,7 +17,7 @@ export const spotifyRouter = createTRPCRouter({
       return {
         name: track.item.name,
         artist: track.item.artists.map(artist => artist.name).join(', '),
-        image: track.item.album.images.length ? track.item.album.images[1]?.url : null,
+        image: track.item.album.images.length ? track.item.album.images[2]?.url : null,
       }
     } catch (e) {
       return null;
