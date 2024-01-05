@@ -54,7 +54,7 @@ export const profile = {
     },
     {
       name: 'CodeTie',
-      date: '2019 - 2021',
+      date: '2019 - 2022',
       locality: 'Curitiba, PR - Brazil',
       techs: [
         'React',
