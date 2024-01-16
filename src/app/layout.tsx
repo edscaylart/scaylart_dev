@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { favicons as icons } from "@/constants/favicons";
-import { Footer } from "./_components/footer";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,7 +32,6 @@ export default function RootLayout({
         <TRPCReactProvider cookies={cookies().toString()}>
           <>
             {children}
-
             <Footer />
           </>
         </TRPCReactProvider>

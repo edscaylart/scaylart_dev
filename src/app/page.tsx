@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 import { profile } from "@/data/profile";
-import { ProfileAttributes } from "./_components/profile-attributes";
-import { ProfileBackground } from './_components/profile-background';
+import { ProfileAttributes } from "@/components/profile-attributes";
+import { ProfileBackground } from '@/components/profile-background';
 
 export default async function Home() {
   return (
@@ -37,7 +37,7 @@ export default async function Home() {
             <section className="mt-1 sm:max-w-[370px] border border-slate-100 rounded-lg shadow-md py-2 h-fit">
               <div>
                 <p className="mx-2 text-sm font-semibold cursor-default">Proficiencies & Languages</p>
-                <div className='my-2 border-b border-slate-100'></div>
+                <div className='my-2 border-b border-slate-100 shadow-lg'></div>
 
                 <div className="mx-2 flex-col space-y-8">
                   <div>
@@ -48,33 +48,27 @@ export default async function Home() {
                   <div>
                     <p>Weapons</p>
                     <ul className="flex flex-wrap gap-2 items-center justify-center font-mono text-xs list-disc list-inside font-medium cursor-default">
-                      <li>Keyboard</li>
-                      <li>Mouse</li>
-                      <li>Joystick</li>
-                      <li>Acoustic Guitar</li>
+                      {profile.weapons.map(weapon => (
+                        <li key={weapon}>{weapon}</li>
+                      ))}
                     </ul>
                   </div>
 
                   <div>
                     <p>Tools</p>
                     <ul className="flex flex-wrap gap-2 items-center justify-center font-mono text-xs list-disc list-inside font-medium cursor-default">
-                      <li>React</li>
-                      <li>Next.js</li>
-                      <li>React Native</li>
-                      <li>Node.js</li>
-                      <li>Git</li>
-                      <li>Docker</li>
+                      {profile.tools.map(tool => (
+                        <li key={tool}>{tool}</li>
+                      ))}
                     </ul>
                   </div>
 
                   <div>
                     <p>Languages</p>
                     <ul className="flex flex-wrap gap-2 items-center justify-center font-mono text-xs list-disc list-inside font-medium cursor-default text-md">
-                      <li>Javascript</li>
-                      <li>Typescript</li>
-                      <li>Java</li>
-                      <li>PHP</li>
-                      <li>Delphi</li>
+                      {profile.languages.map(language => (
+                        <li key={language}>{language}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>

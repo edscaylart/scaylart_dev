@@ -8,7 +8,6 @@ import { Link } from "./link";
 export const Footer = async () => {
   const spotifyTrack = await api.spotify.getCurrentPlayingTrack.query();
 
-
   return (
     <footer className="my-10 mx-auto max-w-[640px] px-4 pb-16">
       <div className="my-5 border-b border-rose-100/20"></div>

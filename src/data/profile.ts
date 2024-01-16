@@ -90,5 +90,26 @@ export const profile = {
       date: 'JAN 2010 - NOV 2013',
       description: `Studied at the University of Cuiabá (UNIC) in Rondonópolis, MT`,
     },
-  ]
+  ],
+  languages: [
+    'Javascript',
+    'Typescript',
+    'Java',
+    'PHP',
+    'Delphi'
+  ],
+  tools: [
+    'React',
+    'Next.js',
+    'React Native',
+    'Node.js',
+    'Git',
+    'Docker',
+  ],
+  weapons: [
+    'Keyboard',
+    'Mouse',
+    'Joystick',
+    'Acoustic Guitar',
+  ],
 }
