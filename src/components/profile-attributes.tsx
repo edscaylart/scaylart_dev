@@ -1,41 +1,40 @@
-import Image from 'next/image';
-
 import { profile } from "@/data/profile";
-import { getAttributeModifier } from "@/utils/dnd"
+import { getAttributeModifier } from "@/utils/dnd";
+import { type IconType } from "react-icons";
 
-const Attribute = ({ label, value }: { label: string, value: number }) => {
+const Attribute = ({
+  label,
+  value,
+  IconComponent,
+}: {
+  label: string;
+  value: number;
+  IconComponent: IconType;
+}) => {
   const modifier = getAttributeModifier(value);
 
   return (
-    <li className="relative container flex flex-col items-center rounded-lg h-[102px] w-[84px] pt-1 m-0 text-center">
-      <div className="absolute overflow-hidden top-0 bottom-0 left-0 right-0">
-        <Image
-          height={102}
-          width={84}
-          priority
-          src="/svg/dnd-box-background.svg"
-          alt="Dnd Box Background"
-        />
-      </div>
-      <div>
-        <span className="relative text-[9px] uppercase font-semibold">{label}</span>
-      </div>
-      <div>
-        <span className=" relative text-2xl font-semibold">{modifier >= 0 ? `+${modifier}` : modifier}</span>
-      </div>
-      <div className="absolute bottom-2 left-0 right-0">
-        <span className="text-md font-semibold">{value}</span>
+    <li className="flex flex-col items-center">
+      <span className="text-center text-sm uppercase">{label}</span>
+      <div className="relative flex h-[80px] w-[90px] items-center justify-center rounded-full border border-slate-400 bg-slate-900">
+        <span className="text-3xl">{value}</span>
+        <IconComponent size="26px" className="absolute -right-2 bottom-3" />
+        <div className="absolute -bottom-3 flex h-[32px] w-[40px] items-center justify-center rounded-full border border-slate-400 bg-slate-900">
+          <span className="text-center">
+            {modifier >= 0 ? `+${modifier}` : modifier}
+          </span>
+        </div>
       </div>
     </li>
-  )
-}
+  );
+};
 
 export const ProfileAttributes = () => {
   return (
-    <ul className="flex flex-wrap gap-x-2 gap-y-4 items-center justify-center cursor-default sm:flex-col sm:gap-4 sm:flex-nowrap">
-      {profile.attributes.map(({ value, label }) => (
-        <Attribute key={label} label={label} value={value} />
+    <ul className="flex cursor-default flex-row justify-center gap-6 rounded-3xl bg-gray-700 py-1">
+      {profile.attributes.map((attribute) => (
+        <Attribute key={attribute.label} {...attribute} />
       ))}
     </ul>
-  )
-}
+  );
+};

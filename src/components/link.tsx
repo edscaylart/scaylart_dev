@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import clsx from 'clsx';
-import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
-import React from 'react';
+import clsx from "clsx";
+import NextLink, { type LinkProps as NextLinkProps } from "next/link";
+import React from "react";
 
 interface ILinkProps extends NextLinkProps {
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
-  size?: 'sm' | 'base' | 'lg' | 'xl';
-  variant?: 'primary' | 'link' | 'icon-button';
+  size?: "sm" | "base" | "lg" | "xl";
+  variant?: "primary" | "link" | "icon-button";
   children?: React.ReactNode;
   external?: boolean;
   className?: string;
@@ -16,8 +16,8 @@ interface ILinkProps extends NextLinkProps {
 export const Link = ({
   leftIcon,
   rightIcon,
-  size = 'base',
-  variant = 'primary',
+  size = "base",
+  variant = "primary",
   children,
   external,
   className,
@@ -26,36 +26,37 @@ export const Link = ({
   return (
     <NextLink
       className={clsx(
-        'group flex w-fit items-center gap-2 ',
+        "group flex w-fit items-center gap-2 ",
         `text-${size}`,
         {
-          'hover:underline': variant === 'link',
+          "hover:underline": variant === "link",
         },
-        className
+        className,
       )}
       {...(external && {
-        target: '_blank',
-        rel: 'noopener noreferrer',
+        target: "_blank",
+        rel: "noopener noreferrer",
       })}
-      {...restProps}>
+      {...restProps}
+    >
       {leftIcon && iconWithStyles(leftIcon, size)}
       {children}
       {rightIcon && iconWithStyles(rightIcon, size)}
     </NextLink>
-  )
-}
+  );
+};
 
 const iconWithStyles = (
   icon: React.ReactElement,
-  size: 'sm' | 'base' | 'lg' | 'xl'
+  size: "sm" | "base" | "lg" | "xl",
 ) =>
   React.cloneElement(icon, {
     className: clsx(
-      'bg-rose-100/30 p-1',
-      'shadow-md rounded-md',
-      'group-hover:scale-[1.2] group-hover:shadow-rose-500/40 group-active:translate-y-[2px]',
-      'transition-all duration-300 ease-out'
+      "bg-rose-100/30 p-1",
+      "shadow-md rounded-md",
+      "group-hover:scale-[1.2] group-hover:shadow-rose-500/40 group-active:translate-y-[2px]",
+      "transition-all duration-300 ease-out",
     ),
-    size: size === 'sm' ? 24 : 32,
+    size: size === "sm" ? 24 : 32,
     ...icon.props,
   });
