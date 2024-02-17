@@ -16,8 +16,8 @@ export const ProfileSkills = () => {
               className={clsx(
                 "h-4 w-4 rounded-full",
                 skill.checked
-                  ? "bg-primary-800"
-                  : "border border-dashed border-slate-400",
+                  ? "bg-accent-500"
+                  : "border-background-900 border border-dashed",
               )}
             ></div>
             <span className="text-xs uppercase">{skill.name}</span>

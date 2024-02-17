@@ -1,6 +1,7 @@
 import { profile } from "@/data/profile";
 import { Card, CardLabel } from "./ui/card";
 import clsx from "clsx";
+import { ProfileTechs } from "./profile-techs";
 
 const Equipments = ({
   title,
@@ -18,8 +19,8 @@ const Equipments = ({
             className={clsx(
               "h-4 w-4 rounded-full",
               checked
-                ? "bg-primary-800"
-                : "border border-dashed border-slate-400",
+                ? "bg-accent-500"
+                : "border-background-900 border border-dashed",
             )}
           ></div>
           <span className="text-xs">{name}</span>
@@ -36,13 +37,7 @@ export const ProfileProficienciesAndLanguages = () => {
       <div className="flex flex-1 flex-col items-start justify-start gap-2 py-2">
         <Equipments title="armor" equipments={profile.armors} />
         <Equipments title="weapons" equipments={profile.weapons} />
-        <ul className="flex flex-row flex-wrap gap-2">
-          {[...profile.languages, ...profile.tools].map((item) => (
-            <li className="rounded-md border px-2" key={item}>
-              {item}
-            </li>
-          ))}
-        </ul>
+        <ProfileTechs />
       </div>
     </Card>
   );

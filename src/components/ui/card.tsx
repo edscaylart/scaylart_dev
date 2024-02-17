@@ -8,7 +8,8 @@ interface ICardProps {
 const Card = ({ className, children }: ICardProps) => (
   <div
     className={clsx(
-      "bg-background-100 relative flex flex-1 cursor-default items-center justify-center rounded-sm border px-3 pt-1",
+      "bg-background-100 relative flex flex-1 cursor-default items-center justify-center",
+      "border-background-900 rounded-sm border px-3 pt-1",
       className,
     )}
   >
