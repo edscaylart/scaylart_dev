@@ -1,8 +1,8 @@
 import { profile } from "@/data/profile";
-import { Card, CardLabel } from "./card";
+import { Card, CardLabel } from "./ui/card";
 import clsx from "clsx";
 
-export const SkillsCard = () => {
+export const ProfileSkills = () => {
   return (
     <Card className="max-w-[280px]">
       <CardLabel>Skills</CardLabel>
@@ -16,12 +16,12 @@ export const SkillsCard = () => {
               className={clsx(
                 "h-4 w-4 rounded-full",
                 skill.checked
-                  ? "bg-slate-600"
+                  ? "bg-primary-800"
                   : "border border-dashed border-slate-400",
               )}
             ></div>
             <span className="text-xs uppercase">{skill.name}</span>
-            <span className="text-[10px] uppercase text-gray-400">
+            <span className="text-accent-700 text-[10px] uppercase">
               {skill.mod}
             </span>
             <span className="flex-1 text-right text-xs">{skill.value}</span>

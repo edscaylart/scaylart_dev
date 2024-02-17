@@ -1,5 +1,5 @@
 import { profile } from "@/data/profile";
-import { Card, CardLabel } from "./card";
+import { Card, CardLabel } from "./ui/card";
 import clsx from "clsx";
 
 const Equipments = ({
@@ -18,7 +18,7 @@ const Equipments = ({
             className={clsx(
               "h-4 w-4 rounded-full",
               checked
-                ? "bg-slate-600"
+                ? "bg-primary-800"
                 : "border border-dashed border-slate-400",
             )}
           ></div>
@@ -29,7 +29,7 @@ const Equipments = ({
   );
 };
 
-export const ProficienciesAndLanguages = () => {
+export const ProfileProficienciesAndLanguages = () => {
   return (
     <Card className="flex-none">
       <CardLabel>Proficiencies & Languages</CardLabel>

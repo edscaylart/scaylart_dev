@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaSpotify } from "react-icons/fa";
 
 import { api } from "@/trpc/server";
+import { siteConfig } from "@/config/site";
 
 import { Link } from "./link";
 
@@ -14,7 +15,7 @@ export const Footer = async () => {
 
       <div className="flex flex-col flex-wrap items-center gap-10 px-4 py-5">
         <Link
-          href="https://open.spotify.com/user/12145354220?si=605b7d5194434911"
+          href={siteConfig.spotifyProfile}
           external
           size="sm"
           className="mr-auto"

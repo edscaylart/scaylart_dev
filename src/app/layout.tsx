@@ -7,6 +7,8 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { favicons as icons } from "@/constants/favicons";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "./theme-provider";
+import { siteConfig } from "@/config/site";
+import React from "react";
 
 const fontFamily = Kalam({
   weight: ["300", "400", "700"],
@@ -15,9 +17,9 @@ const fontFamily = Kalam({
 });
 
 export const metadata = {
-  title: "Edson Souza",
-  description: "Edson Souza - Software engineer adventurer",
-  url: "https://scaylart.dev",
+  title: siteConfig.title,
+  description: siteConfig.description,
+  url: siteConfig.url,
   type: "website",
   robots: "follow, index",
   icons,
@@ -30,7 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${fontFamily.variable} bg-slate-900`}>
+      <body
+        className={`font-sans ${fontFamily.variable} bg-background-100 text-text-950`}
+      >
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider>
             {children}

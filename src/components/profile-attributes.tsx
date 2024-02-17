@@ -16,11 +16,13 @@ const Attribute = ({
   return (
     <li className="flex flex-col items-center">
       <span className="text-center text-sm uppercase">{label}</span>
-      <div className="relative flex h-[80px] w-[90px] items-center justify-center rounded-full border border-slate-400 bg-slate-900">
+      <div className="bg-background-100 border-primary-900 relative flex h-[80px] w-[90px] items-center justify-center rounded-full border-2">
         <span className="text-3xl">{value}</span>
-        <IconComponent size="26px" className="absolute -right-2 bottom-3" />
-        <div className="absolute -bottom-3 flex h-[32px] w-[40px] items-center justify-center rounded-full border border-slate-400 bg-slate-900">
-          <span className="text-center">
+        <div className="bg-background-100 absolute -right-3 bottom-3">
+          <IconComponent size="26px" />
+        </div>
+        <div className="bg-primary-700 border-primary-900 absolute -bottom-3 flex h-[32px] w-[40px] items-center justify-center rounded-full border-2 pt-1">
+          <span className="text-background-300 text-center font-bold">
             {modifier >= 0 ? `+${modifier}` : modifier}
           </span>
         </div>
@@ -31,7 +33,7 @@ const Attribute = ({
 
 export const ProfileAttributes = () => {
   return (
-    <ul className="flex cursor-default flex-row justify-center gap-6 rounded-3xl bg-gray-700 py-1">
+    <ul className="bg-background-100 flex cursor-default flex-row justify-center gap-6 rounded-3xl py-1">
       {profile.attributes.map((attribute) => (
         <Attribute key={attribute.label} {...attribute} />
       ))}

@@ -1,10 +1,12 @@
+"use client";
 import { profile } from "@/data/profile";
-import { Card, CardLabel } from "./card";
+import { Card, CardLabel } from "./ui/card";
+import React from "react";
 
 const InfoBlock = ({ label, value }: { label: string; value: string }) => {
   return (
     <div className="flex flex-1 items-center gap-2">
-      <span className="text-sm uppercase">{label}</span>
+      <span className="text-text-900 text-sm uppercase">{label}</span>
       <span className="flex-1 border-b">{value}</span>
     </div>
   );

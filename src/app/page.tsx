@@ -2,12 +2,14 @@ import Image from "next/image";
 
 import { ProfileAttributes } from "@/components/profile-attributes";
 import { ProfileHeader } from "@/components/profile-header";
-import { SkillsCard } from "@/components/skills-card";
-import { ProficienciesAndLanguages } from "@/components/proficiencies-n-languages";
+import { ProfileSkills } from "@/components/profile-skills";
+import { ProfileProficienciesAndLanguages } from "@/components/profile-proficiencies-n-languages";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export default async function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-[740px] px-4 pb-10 pt-16 sm:pt-16">
+      <BackgroundBeams />
       <div className="flex items-center justify-center">
         <Image
           className="h-[60px]"
@@ -23,9 +25,9 @@ export default async function Home() {
         <ProfileAttributes />
         <div className="mt-4">
           <div className="flex flex-row gap-4">
-            <SkillsCard />
+            <ProfileSkills />
             <div className="flex flex-1 flex-col">
-              <ProficienciesAndLanguages />
+              <ProfileProficienciesAndLanguages />
             </div>
           </div>
         </div>
