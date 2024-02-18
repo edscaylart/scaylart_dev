@@ -52,9 +52,9 @@ const iconWithStyles = (
 ) =>
   React.cloneElement(icon, {
     className: clsx(
-      "bg-rose-100/30 p-1",
+      "bg-background-100 p-1",
       "shadow-md rounded-md",
-      "group-hover:scale-[1.2] group-hover:shadow-rose-500/40 group-active:translate-y-[2px]",
+      "group-hover:scale-[1.2] group-hover:shadow-background-700 group-active:translate-y-[2px]",
       "transition-all duration-300 ease-out",
     ),
     size: size === "sm" ? 24 : 32,

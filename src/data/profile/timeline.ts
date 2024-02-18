@@ -1,4 +1,4 @@
-type TProfileTimeline = {
+export type TProfileTimeline = {
   name: string;
   date: string;
   description: string;

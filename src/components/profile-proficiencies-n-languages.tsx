@@ -12,7 +12,9 @@ const Equipments = ({
 }) => {
   return (
     <div className="flex flex-row gap-4">
-      <span className="min-w-16 text-sm uppercase">{title}</span>
+      <span className="text-background-900 min-w-16 text-sm uppercase">
+        {title}
+      </span>
       {equipments.map(({ name, checked }) => (
         <div key={name} className="flex flex-row items-center gap-2">
           <div
