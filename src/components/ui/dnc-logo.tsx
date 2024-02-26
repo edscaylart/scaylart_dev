@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import * as React from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -9,7 +9,7 @@ interface IDncLogoProps extends React.ComponentProps<"svg"> {
 }
 
 export const DncLogo = ({ className, ...props }: IDncLogoProps) => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   // const color = theme === "dark" ? "#d3d3f8" : "#07072c";
 
