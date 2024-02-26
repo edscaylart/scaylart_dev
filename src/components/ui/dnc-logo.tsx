@@ -11,7 +11,7 @@ interface IDncLogoProps extends React.ComponentProps<"svg"> {
 export const DncLogo = ({ className, ...props }: IDncLogoProps) => {
   const { theme } = useTheme();
 
-  const color = theme === "dark" ? "#d3d3f8" : "#07072c";
+  // const color = theme === "dark" ? "#d3d3f8" : "#07072c";
 
   return (
     <svg
