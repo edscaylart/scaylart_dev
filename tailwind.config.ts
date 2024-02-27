@@ -17,6 +17,9 @@ export default {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      animation: {
+        bar: "gradient 15s ease infinite, pulse 0ms -800ms ease-in infinite alternate",
+      },
     },
     colors: {
       text: {

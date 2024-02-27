@@ -20,9 +20,9 @@ const TechCard = ({ tech: { title, IconComponent } }: ITechCardProps) => {
     <div
       className={clsx(
         "h-22 flex flex-col items-center justify-center space-y-2",
-        "bg-secondary-400 rounded-lg border-[1px] border-none p-2 text-[13.5px]",
+        "rounded-lg border-[1px] border-none bg-secondary-600 p-2 text-[13.5px]",
         "rounded-md shadow-md",
-        "hover:bg-secondary-500 hover:shadow-secondary-700 active:translate-y-[2px]",
+        "hover:bg-secondary-700 hover:shadow-secondary-600 active:translate-y-[2px]",
         "transition-all duration-300 ease-out",
       )}
     >

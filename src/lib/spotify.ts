@@ -11,27 +11,34 @@ const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
-interface ISpotifyAccessTokenResponse {
+export interface ISpotifyAccessTokenResponse {
   access_token: string;
   expires_in: number;
 }
 
-interface ISpotifyCurrentPlayingTrackResponse {
-  item: {
-    album: {
-      images: {
-        url: string;
-      }[];
-    };
-    artists: {
-      name: string;
+export interface ISpotifyTrack {
+  album: {
+    images: {
+      url: string;
     }[];
-    name: string;
-    external_urls: {
-      spotify: string;
-    };
   };
+  artists: {
+    name: string;
+  }[];
+  name: string;
+  external_urls: {
+    spotify: string;
+  };
+}
+export interface ISpotifyCurrentPlayingTrackResponse {
+  item: ISpotifyTrack;
   is_playing: boolean;
+}
+
+export interface ISpotifyRecentlyPlayedTracksResponse {
+  items: {
+    track: ISpotifyTrack;
+  }[];
 }
 
 export const getAccessToken = async () => {
@@ -62,9 +69,28 @@ export const getCurrentPlayingTrack = async () => {
     },
   );
 
+  if (res.status === 200 && res.data.is_playing) {
+    return res.data.item;
+  }
+
+  return null;
+};
+
+export const getRecentlyPlayedTracks = async () => {
+  const { access_token } = await getAccessToken();
+  const res = await axios.get<ISpotifyRecentlyPlayedTracksResponse>(
+    `${SPOTIFY_BASE_ENDPOINT}/me/player/recently-played?limit=10`,
+    {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    },
+  );
+
   if (res.status === 200) {
-    const data = res.data as ISpotifyCurrentPlayingTrackResponse;
-    return data;
+    const recentPlaysLength = res.data.items.length;
+    const itemIndex = Math.floor(Math.random() * recentPlaysLength);
+    return res.data.items[itemIndex]?.track;
   }
 
   return null;

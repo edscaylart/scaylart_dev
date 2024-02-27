@@ -11,7 +11,7 @@ export const Footer = async () => {
 
   return (
     <footer className="mx-auto my-10 max-w-[730px] px-4 pb-16">
-      <div className="my-5 border-b border-rose-100/20"></div>
+      <div className="border-rose-100/20 my-5 border-b"></div>
 
       <div className="flex flex-col flex-wrap items-center gap-10 px-4 py-5">
         <Link
@@ -27,19 +27,24 @@ export const Footer = async () => {
           }
         >
           {spotifyTrack ? (
-            <div className="flex flex-row gap-4">
-              {spotifyTrack.image && (
-                <Image
-                  height={48}
-                  width={48}
-                  priority
-                  src={spotifyTrack.image}
-                  alt={spotifyTrack.name}
-                />
-              )}
-              <div className="flex flex-col gap-1">
-                <span className="font-bold">{spotifyTrack.name}</span>
-                <span className="text-rose-200/50">{spotifyTrack.artist}</span>
+            <div>
+              <span>{spotifyTrack.currentStatus}</span>
+              <div className="flex flex-row gap-4">
+                {spotifyTrack.image && (
+                  <Image
+                    height={48}
+                    width={48}
+                    priority
+                    src={spotifyTrack.image}
+                    alt={spotifyTrack.name}
+                  />
+                )}
+                <div className="flex flex-col gap-1">
+                  <span className="font-bold">{spotifyTrack.name}</span>
+                  <span className="text-rose-200/50">
+                    {spotifyTrack.artist}
+                  </span>
+                </div>
               </div>
             </div>
           ) : (

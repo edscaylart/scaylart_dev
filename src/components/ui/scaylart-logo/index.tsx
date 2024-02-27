@@ -9,9 +9,5 @@ import { ScaylartDarkLogo } from "./scaylart-dark-logo";
 export const ScaylartLogo = (props: IScaylartLogoProps) => {
   const { theme } = useTheme();
 
-  return theme === "dark" ? (
-    <ScaylartLightLogo {...props} />
-  ) : (
-    <ScaylartDarkLogo {...props} />
-  );
+  return <ScaylartLightLogo {...props} />;
 };
