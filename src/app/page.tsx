@@ -12,11 +12,11 @@ export default async function Home() {
         <ProfileHeader />
         <ProfileAttributes />
         <div className="mt-4">
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-row flex-wrap gap-4">
             <ProfileSkills />
             <div className="flex flex-1 flex-col">
               <ProfileProficienciesAndLanguages />
-              <div className="flex flex-1 items-center justify-center">
+              <div className="mt-4 flex flex-1 items-center justify-center sm:mt-0">
                 <DncLogo className="fill-background-900 hover:fill-background-800" />
               </div>
             </div>

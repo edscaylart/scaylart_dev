@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 export const ProfileSkills = () => {
   return (
-    <Card className="max-w-[280px]">
+    <Card className="min-w-[280px] sm:max-w-[280px]">
       <CardLabel>Skills</CardLabel>
       <div className="flex flex-1 flex-col space-y-2 py-2">
         {profile.skills.map((skill) => (
@@ -17,11 +17,11 @@ export const ProfileSkills = () => {
                 "h-4 w-4 rounded-full",
                 skill.checked
                   ? "bg-accent-500"
-                  : "border-background-900 border border-dashed",
+                  : "border border-dashed border-background-900",
               )}
             ></div>
             <span className="text-xs uppercase">{skill.name}</span>
-            <span className="text-accent-700 text-[10px] uppercase">
+            <span className="text-[10px] uppercase text-accent-700">
               {skill.mod}
             </span>
             <span className="flex-1 text-right text-xs">{skill.value}</span>

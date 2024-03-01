@@ -2,11 +2,17 @@
 import { profile } from "@/data/profile";
 import { Card, CardLabel } from "./ui/card";
 import React from "react";
+import clsx from "clsx";
 
 const InfoBlock = ({ label, value }: { label: string; value: string }) => {
   return (
-    <div className="flex flex-1 items-center gap-2">
-      <span className="text-text-900 text-sm uppercase">{label}</span>
+    <div
+      className={clsx(
+        "flex flex-1 items-start sm:items-center sm:gap-2",
+        "flex-col sm:flex-row",
+      )}
+    >
+      <span className="text-sm uppercase text-text-900">{label}</span>
       <span className="flex-1 border-b">{value}</span>
     </div>
   );

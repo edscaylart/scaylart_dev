@@ -12,17 +12,17 @@ const Equipments = ({
 }) => {
   return (
     <div className="flex flex-row gap-4">
-      <span className="text-background-900 min-w-16 text-sm uppercase">
+      <span className="min-w-14 text-sm uppercase text-background-900 sm:min-w-16">
         {title}
       </span>
       {equipments.map(({ name, checked }) => (
-        <div key={name} className="flex flex-row items-center gap-2">
+        <div key={name} className="flex flex-row items-center gap-1 sm:gap-2">
           <div
             className={clsx(
               "h-4 w-4 rounded-full",
               checked
                 ? "bg-accent-500"
-                : "border-background-900 border border-dashed",
+                : "border border-dashed border-background-900",
             )}
           ></div>
           <span className="text-xs">{name}</span>
@@ -34,7 +34,7 @@ const Equipments = ({
 
 export const ProfileProficienciesAndLanguages = () => {
   return (
-    <Card className="flex-none">
+    <Card className="mt-2 flex-none sm:mt-0">
       <CardLabel>Proficiencies & Languages</CardLabel>
       <div className="flex flex-1 flex-col items-start justify-start gap-2 py-2">
         <Equipments title="armor" equipments={profile.armors} />

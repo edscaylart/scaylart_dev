@@ -41,7 +41,7 @@ const Attribute = ({
 
 export const ProfileAttributes = () => {
   return (
-    <ul className="flex cursor-default flex-row justify-center gap-6 rounded-3xl bg-background-100 py-1">
+    <ul className="flex cursor-default flex-row flex-wrap justify-center gap-6 rounded-3xl bg-background-100 py-1">
       {profile.attributes.map((attribute) => (
         <Attribute key={attribute.label} {...attribute} />
       ))}
