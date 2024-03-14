@@ -5,12 +5,11 @@ import { cookies } from "next/headers";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { favicons as icons } from "@/constants/favicons";
-import { Footer } from "@/components/footer";
 import { ThemeProvider } from "./theme-provider";
 import { siteConfig } from "@/config/site";
 import React from "react";
 import { Header } from "@/components/header";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Footer } from "@/components/footer";
 
 const fontFamily = Kalam({
   weight: ["300", "400", "700"],
@@ -35,13 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans ${fontFamily.variable} bg-background-100 text-text-950`}
+        className={`flex h-screen flex-col font-sans ${fontFamily.variable} bg-background-100 text-text-950`}
       >
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider>
-            <BackgroundBeams />
             <Header />
-            {children}
+            <main className="sm:pt-30 mx-auto max-w-[730px] flex-1 px-4 pb-10 pt-24">
+              {children}
+            </main>
             <Footer />
           </ThemeProvider>
         </TRPCReactProvider>

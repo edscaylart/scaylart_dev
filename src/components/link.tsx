@@ -26,7 +26,7 @@ export const Link = ({
   return (
     <NextLink
       className={clsx(
-        "group flex w-fit items-center gap-2 ",
+        "group flex w-fit items-center gap-2",
         `text-${size}`,
         {
           "hover:underline": variant === "link",

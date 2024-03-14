@@ -10,7 +10,7 @@ export const Footer = async () => {
   const spotifyTrack = await api.spotify.getCurrentPlayingTrack.query();
 
   return (
-    <footer className="mx-auto my-10 max-w-[730px] px-4 pb-16">
+    <footer className="mx-auto my-10 w-full max-w-[730px] px-4 pb-16">
       <div className="border-rose-100/20 my-5 border-b"></div>
 
       <div className="flex flex-col flex-wrap items-center gap-10 px-4 py-5">
