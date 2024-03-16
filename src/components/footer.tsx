@@ -11,7 +11,7 @@ export const Footer = async () => {
 
   return (
     <footer className="mx-auto my-10 w-full max-w-[730px] px-4 pb-16">
-      <div className="border-rose-100/20 my-5 border-b"></div>
+      {/* <div className="border-rose-100/20 my-5 border-b"></div> */}
 
       <div className="flex flex-col flex-wrap items-center gap-10 px-4 py-5">
         <Link
@@ -54,6 +54,25 @@ export const Footer = async () => {
             </>
           )}
         </Link>
+
+        <div className="grid w-full grid-flow-dense grid-cols-2 items-start gap-4">
+          <div className="flex flex-col items-start gap-4">
+            <Link href="/" variant="link">
+              Home
+            </Link>
+            <Link href="/profile" variant="link">
+              My Profile
+            </Link>
+          </div>
+          <div className="flex flex-col items-start gap-4">
+            <Link href={siteConfig.githubUrl} external variant="link">
+              Github
+            </Link>
+            <Link href={siteConfig.linkedinUrl} external variant="link">
+              LinkedIn
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
