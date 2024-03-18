@@ -10,6 +10,7 @@ import { siteConfig } from "@/config/site";
 import React from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const fontFamily = Kalam({
   weight: ["300", "400", "700"],
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider>
+            <BackgroundBeams />
             <Header />
             <main className="sm:pt-30 mx-auto max-w-[730px] flex-1 px-4 pb-10 pt-24">
               {children}
