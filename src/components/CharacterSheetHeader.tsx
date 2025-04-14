@@ -16,14 +16,14 @@ export default function CharacterSheetHeader() {
 
         <div className="flex-1 space-y-2">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
-            <h1 className="text-2xl font-bold tracking-tight">Edson Souza</h1>
-            <div className="flex items-center gap-2 text-[10px]">
+            <h1 className="text-4xl font-bold tracking-tight">Edson Souza</h1>
+            <div className="flex items-center gap-2 text-sm">
               <MapPin size={16} className="text-red-700" />
               <span>Rondonópolis, MT</span>
             </div>
           </div>
 
-          <div className="flex gap-2 text-[10px]">
+          <div className="flex gap-2 text-sm">
             <span className="px-2 py-1 bg-red-700 text-white rounded">
               Software Engineer
             </span>
@@ -32,7 +32,7 @@ export default function CharacterSheetHeader() {
             </span>
           </div>
 
-          <p className="text-xs mt-4">
+          <p className="text-lg mt-4">
             A versatile full-stack developer with a passion for crafting elegant
             solutions to complex problems. Specializing in React enchantments
             and Mobile conjurations.
@@ -42,7 +42,7 @@ export default function CharacterSheetHeader() {
             <Button
               variant="outline"
               size="sm"
-              className="rounded-full border-stone-800 text-[10px]"
+              className="rounded-full border-stone-800"
             >
               <Github size={18} className="mr-2" />
               GitHub
@@ -50,7 +50,7 @@ export default function CharacterSheetHeader() {
             <Button
               variant="outline"
               size="sm"
-              className="rounded-full border-stone-800 text-[10px]"
+              className="rounded-full border-stone-800"
             >
               <Linkedin size={18} className="mr-2" />
               LinkedIn

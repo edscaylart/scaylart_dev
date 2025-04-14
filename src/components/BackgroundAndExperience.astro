@@ -33,7 +33,7 @@ const experiences: Experience[] = [
   class="border-2 border-stone-800 rounded-md p-6 bg-amber-100 mb-6 shadow-md"
 >
   <h2
-    class="text-lg font-bold mb-4 text-center border-b-2 border-stone-800 pb-2"
+    class="text-2xl font-bold mb-4 text-center border-b-2 border-stone-800 pb-2"
   >
     Adventure Log
   </h2>
@@ -43,9 +43,9 @@ const experiences: Experience[] = [
       experiences.map((exp, index) => (
         <div class="pl-4 ml-4 relative">
           <div class="absolute w-4 h-4 border-2 border-amber-100 bg-stone-800 rounded-full -left-[26px] top-2" />
-          <h3 class="text-xs font-bold">{exp.title}</h3>
-          <p class="text-[10px] italic">{exp.time}</p>
-          <ul class="list-disc list-inside mt-2 space-y-1 text-[10px]">
+          <h3 class="text-xl font-bold">{exp.title}</h3>
+          <p class="text-sm italic">{exp.time}</p>
+          <ul class="list-disc list-inside mt-2 space-y-1">
             {exp.topics.map((topic, idx) => (
               <li>{topic}</li>
             ))}

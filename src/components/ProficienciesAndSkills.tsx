@@ -49,7 +49,7 @@ const skills: SkillProps[] = [
 export default function ProficienciesAndSkills() {
   return (
     <div className="border-2 border-stone-800 rounded-md p-6 bg-amber-100 mb-6 shadow-md">
-      <h2 className="text-lg font-bold mb-4 text-center border-b-2 border-stone-800 pb-2">
+      <h2 className="text-2xl font-bold mb-4 text-center border-b-2 border-stone-800 pb-2">
         Proficiencies & Skills
       </h2>
 
