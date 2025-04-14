@@ -1,0 +1,32 @@
+---
+import StatsBlock from "./StatsBlock.astro";
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+  <StatsBlock
+    title="STR"
+    value={14}
+    modifier="+2"
+    description="Problem Solving"
+  />
+  <StatsBlock title="DEX" value={16} modifier="+3" description="Adaptability" />
+  <StatsBlock title="CON" value={15} modifier="+2" description="Work Ethic" />
+  <StatsBlock
+    title="INT"
+    value={18}
+    modifier="+4"
+    description="Technical Knowledge"
+  />
+  <StatsBlock
+    title="WIS"
+    value={14}
+    modifier="+2"
+    description="Problem Analysis"
+  />
+  <StatsBlock
+    title="CHA"
+    value={15}
+    modifier="+2"
+    description="Communication"
+  />
+</div>
