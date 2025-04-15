@@ -6,6 +6,7 @@ import reactNativeLogo from "@/assets/skills/react-native.webp";
 import reactLogo from "@/assets/skills/react.webp";
 import type { SkillProps } from "./Skill";
 import Skill from "./Skill";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 const skills: SkillProps[] = [
   {
@@ -48,16 +49,17 @@ const skills: SkillProps[] = [
 
 export default function ProficienciesAndSkills() {
   return (
-    <div className="border-2 border-stone-800 rounded-md p-6 bg-amber-100 mb-6 shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center border-b-2 border-stone-800 pb-2">
-        Proficiencies & Skills
-      </h2>
-
-      <div className="flex flex-row space-x-4">
+    <Card className="bg-amber-100 mb-6 shadow-md">
+      <CardHeader>
+        <CardTitle className="text-2xl  text-center border-b-4 border-stone-800 pb-2">
+          Proficiencies & Skills
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-row space-x-4">
         {skills.map((skill, index) => (
           <Skill {...skill} key={index} />
         ))}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

@@ -1,4 +1,4 @@
-import avatarImage from "../assets/dnd-avatar.png";
+import avatarImage from "../assets/pixel-avatar.webp";
 import { getAge } from "../utils/age";
 
 const level = getAge(1992, 5, 10);
@@ -13,7 +13,7 @@ export default function CharacterPortrait() {
           className="w-[160px] h-[160px] object-cover"
         />
       </div>
-      <div className="absolute -bottom-2 -right-2 bg-amber-100 border-2 border-stone-800 rounded-full px-2 py-1 text-xs font-bold">
+      <div className="absolute -bottom-2 -right-0 bg-amber-100 border-2 border-stone-800 rounded-full px-2 py-1 text-xs font-bold">
         LVL {level}
       </div>
     </div>
